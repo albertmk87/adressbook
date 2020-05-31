@@ -23,10 +23,15 @@ document.querySelector(".post-submit").addEventListener("click", e=>{ //clicking
 	e.preventDefault();
 	const data=ui.getInputData(); //getting the values from the input fields using the getInputData func
 	console.log(data);
+	if(data.firstName!=="" && data.lastName!=="" && data.email!=="" && data.phoneNumber!=="" && data.description!==""){
 	let newContact=state.contacts.addContact(data.firstName,data.lastName,data.email,data.phoneNumber,data.description);
 	ui.renderSingleContact(newContact);
 	ui.addMessage("success","You successfully added a new contact");
 	ui.clearInputData();   //storing the added contact in the newContact variable because the addContact returns the contact
+		}else{
+				ui.addMessage("danger","Please fill all fields");
+
+		}
 })                          //then rendering the new added contact on the dom displaying a message and clearing the input fields
 
 document.querySelector("#contacts").addEventListener("click", e=>{  //event listener on the contacts div
