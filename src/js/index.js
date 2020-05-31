@@ -29,7 +29,7 @@ document.querySelector(".post-submit").addEventListener("click", e=>{ //clicking
 	ui.addMessage("success","You successfully added a new contact");
 	ui.clearInputData();   //storing the added contact in the newContact variable because the addContact returns the contact
 		}else{
-				ui.addMessage("danger","Please fill all fields");
+				ui.addMessage("danger","Please fill all fields!!!!");
 
 		}
 })                          //then rendering the new added contact on the dom displaying a message and clearing the input fields
